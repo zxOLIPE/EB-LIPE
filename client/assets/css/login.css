@@ -1,0 +1,182 @@
+/* =========================
+   EB LIPE - LOGIN
+========================= */
+
+
+.login-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+
+
+
+.login-box {
+
+    width: 420px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+.login-logo h1 {
+
+    font-size: 45px;
+
+    font-weight: 800;
+
+}
+
+
+
+.login-logo span {
+
+    color: var(--secondary);
+
+}
+
+
+
+
+.login-logo p {
+
+    color: var(--text-gray);
+
+    margin-bottom: 35px;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+
+
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+    gap: 10px;
+
+}
+
+
+
+
+label {
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+
+
+
+input {
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: #080b08;
+
+    color: white;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+
+input:focus {
+
+    outline: none;
+
+    border-color: var(--primary);
+
+}
+
+
+
+
+
+
+form button {
+
+
+    margin-top: 15px;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+
+}
+
+
+
+
+form button:hover {
+
+
+    background: var(--primary-dark);
+
+
+}
+
+
+
+
+
+
+.login-box a {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--text-gray);
+
+    font-size: 14px;
+
+}

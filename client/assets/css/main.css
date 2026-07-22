@@ -1,0 +1,103 @@
+/* =========================
+   EB LIPE - MAIN CSS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #080b08;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+:root {
+
+    --primary: #1f7a3f;
+    --primary-dark: #14552c;
+    --secondary: #c8a951;
+
+    --background: #080b08;
+    --card: #111611;
+
+    --border: rgba(255,255,255,0.08);
+
+    --text-gray: #a8ada8;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #050705;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    radial-gradient(
+        circle at top,
+        rgba(31,122,63,0.15),
+        transparent 40%
+    );
+
+    pointer-events: none;
+
+    z-index: -1;
+}

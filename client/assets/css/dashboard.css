@@ -1,0 +1,263 @@
+/* =========================
+   EB LIPE - DASHBOARD
+========================= */
+
+
+.dashboard {
+
+    display: flex;
+
+    min-height: 100vh;
+
+}
+
+
+
+
+
+.sidebar {
+
+    width: 270px;
+
+    background: #050705;
+
+    border-right: 1px solid var(--border);
+
+    padding: 35px 25px;
+
+}
+
+
+
+
+
+.side-logo h1 {
+
+    font-size: 35px;
+
+}
+
+
+.side-logo span {
+
+    color: var(--secondary);
+
+}
+
+
+
+.side-logo p {
+
+    color: var(--text-gray);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+
+
+
+.sidebar nav {
+
+    margin-top: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+
+
+
+.sidebar nav a {
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    color: var(--text-gray);
+
+    transition: .3s;
+
+}
+
+
+
+
+
+.sidebar nav a:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+
+
+
+
+
+.panel {
+
+    flex: 1;
+
+    padding: 40px;
+
+}
+
+
+
+
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+
+
+.panel-header p {
+
+    color: var(--text-gray);
+
+}
+
+
+
+
+
+.status {
+
+    background: var(--primary);
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+}
+
+
+
+
+
+
+
+
+.profile-card {
+
+    margin-top: 40px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+}
+
+
+
+
+
+
+.dashboard-cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+}
+
+
+
+
+
+.dash-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+.dash-card h3 {
+
+    font-size: 40px;
+
+    color: var(--secondary);
+
+}
+
+
+
+
+
+.dash-card p {
+
+    color: var(--text-gray);
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.dashboard {
+
+    flex-direction: column;
+
+}
+
+
+.sidebar {
+
+    width: 100%;
+
+}
+
+
+.dashboard-cards {
+
+    grid-template-columns: 1fr;
+
+}
+
+
+}

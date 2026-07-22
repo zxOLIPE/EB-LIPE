@@ -1,0 +1,229 @@
+/* =========================
+   EB LIPE - HIERARQUIA
+========================= */
+
+
+body {
+
+    background:#050705;
+
+    color:white;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+
+
+
+
+.rank-header {
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+
+
+
+
+.rank-header h1 {
+
+    font-size:55px;
+
+}
+
+
+
+
+
+.rank-header span {
+
+    color:#c8a951;
+
+}
+
+
+
+
+
+.rank-header p {
+
+    color:#aaa;
+
+}
+
+
+
+
+
+.ranks-container {
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+.ranks-container h2 {
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin:50px 0;
+
+}
+
+
+
+
+
+.category {
+
+    margin-bottom:70px;
+
+}
+
+
+
+
+
+.category-title {
+
+    font-size:30px;
+
+    border-left:5px solid #c8a951;
+
+    padding-left:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+.rank-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+
+
+.rank-card {
+
+    background:#101410;
+
+    border:1px solid #242924;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.rank-card:hover {
+
+    transform:translateY(-8px);
+
+    border-color:#1f7a3f;
+
+}
+
+
+
+
+
+.rank-card h4 {
+
+    color:#c8a951;
+
+    font-size:26px;
+
+}
+
+
+
+
+
+.rank-card strong {
+
+    display:block;
+
+    font-size:18px;
+
+    margin:15px 0;
+
+}
+
+
+
+
+
+.rank-card p {
+
+    color:#999;
+
+}
+
+
+
+
+
+.rank-card span {
+
+    color:#1f7a3f;
+
+}
+
+
+
+
+@media(max-width:1000px){
+
+.rank-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+.rank-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

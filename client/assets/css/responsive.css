@@ -1,0 +1,287 @@
+/* =========================
+   EB LIPE - RESPONSIVE
+========================= */
+
+
+
+@media(max-width:1100px){
+
+
+    .navbar {
+
+        padding: 0 4%;
+
+    }
+
+
+    .hero {
+
+        padding: 60px 4%;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .stats {
+
+        width: 92%;
+
+    }
+
+
+    .cards,
+    .news {
+
+        width: 92%;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+
+    .navbar {
+
+
+        height: auto;
+
+        padding: 25px 5%;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+
+    }
+
+
+
+
+    .navbar nav {
+
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 20px;
+
+
+    }
+
+
+
+
+    .hero {
+
+
+        flex-direction: column;
+
+        text-align: center;
+
+
+    }
+
+
+
+
+
+    .hero-content {
+
+
+        max-width: 100%;
+
+
+    }
+
+
+
+
+    .hero-image {
+
+
+        width: 90%;
+
+
+    }
+
+
+
+
+    .hero-buttons {
+
+
+        justify-content: center;
+
+
+    }
+
+
+
+
+    .cards-container {
+
+
+        grid-template-columns: 1fr;
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+    .logo h1 {
+
+        font-size: 26px;
+
+    }
+
+
+
+
+    .navbar nav a {
+
+        font-size: 13px;
+
+    }
+
+
+
+
+
+    .login-btn {
+
+
+        width: 100%;
+
+
+    }
+
+
+
+
+
+    .hero {
+
+
+        padding-top: 40px;
+
+
+    }
+
+
+
+
+
+    .hero-content h2 {
+
+
+        font-size: 40px;
+
+
+    }
+
+
+
+
+
+    .hero-content p {
+
+
+        font-size: 15px;
+
+
+    }
+
+
+
+
+
+    .hero-buttons {
+
+
+        flex-direction: column;
+
+
+    }
+
+
+
+
+
+    .hero-buttons button {
+
+
+        width: 100%;
+
+
+    }
+
+
+
+
+
+    .stats {
+
+
+        grid-template-columns: 1fr;
+
+
+    }
+
+
+
+
+
+    .stat-card h3 {
+
+
+        font-size: 38px;
+
+
+    }
+
+
+
+
+
+    .cards h2,
+    .news h2 {
+
+
+        font-size: 30px;
+
+
+    }
+
+
+
+
+}
