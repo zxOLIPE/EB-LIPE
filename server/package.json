@@ -2,9 +2,9 @@
   "name": "eb-lipe-server",
   "version": "1.0.0",
   "description": "Servidor oficial EB LIPE",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": "20.x"
