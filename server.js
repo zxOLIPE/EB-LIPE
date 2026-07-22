@@ -11,7 +11,6 @@ dotenv.config();
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
 
 // ===============================
@@ -33,7 +32,7 @@ app.use(
 // FRONTEND
 // ===============================
 
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname, "client")));
 
 // ===============================
 // ROTAS
@@ -45,7 +44,7 @@ app.use("/auth", authRoutes);
 
 // Página inicial
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/index.html"));
+    res.sendFile(path.join(__dirname, "client", "index.html"));
 });
 
 // Painel
@@ -55,7 +54,7 @@ app.get("/painel", (req, res) => {
         return res.redirect("/");
     }
 
-    res.sendFile(path.join(__dirname, "../client/pages/painel.html"));
+    res.sendFile(path.join(__dirname, "client", "pages", "painel.html"));
 
 });
 
