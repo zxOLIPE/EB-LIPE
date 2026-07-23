@@ -3,10 +3,11 @@ const router = express.Router();
 
 const authController = require("../controllers/authController");
 
-// Login com Roblox
+// Login
 router.get("/login", authController.login);
+router.get("/roblox", authController.login);
 
-// Callback do Roblox
+// Callback
 router.get("/callback", authController.callback);
 
 module.exports = router;
