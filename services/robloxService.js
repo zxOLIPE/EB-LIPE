@@ -4,23 +4,33 @@ const GROUP_ID = 966849028;
 
 async function getGroupInfo(userId) {
 
-    console.log("================================");
-    console.log("BUSCANDO GRUPO DO USUÁRIO:", userId);
-    console.log("================================");
-
     try {
 
         const { data } = await axios.get(
             `https://groups.roblox.com/v2/users/${userId}/groups/roles`
         );
 
-        console.log(JSON.stringify(data, null, 2));
+        console.log("======================================");
+        console.log("GRUPOS DO USUÁRIO");
+        console.log("======================================");
 
-        const grupo = data.data.find(g => Number(g.group.id) === GROUP_ID);
+        for (const g of data.data) {
+
+            console.log(
+                `${g.group.id} | ${g.group.name} | ${g.role.name}`
+            );
+
+        }
+
+        console.log("======================================");
+
+        const grupo = data.data.find(
+            g => Number(g.group.id) === GROUP_ID
+        );
 
         if (!grupo) {
 
-            console.log("NÃO ENCONTROU O GRUPO");
+            console.log("GRUPO EB LIPE NÃO ENCONTRADO");
 
             return {
                 grupo: null,
@@ -31,7 +41,13 @@ async function getGroupInfo(userId) {
 
         }
 
-        console.log("PATENTE:", grupo.role.name);
+        console.log("======================================");
+        console.log("GRUPO ENCONTRADO");
+        console.log(`ID: ${grupo.group.id}`);
+        console.log(`Nome: ${grupo.group.name}`);
+        console.log(`Patente: ${grupo.role.name}`);
+        console.log(`Rank: ${grupo.role.rank}`);
+        console.log("======================================");
 
         return {
             grupo: grupo.group.name,
@@ -42,11 +58,19 @@ async function getGroupInfo(userId) {
 
     } catch (err) {
 
-        console.log("STATUS:", err.response?.status);
-        console.log("DATA:", JSON.stringify(err.response?.data, null, 2));
-        console.log("ERRO:", err.message);
+        console.log("========== ERRO ==========");
 
-        throw err;
+        console.log(err.response?.status);
+        console.log(err.response?.data || err.message);
+
+        console.log("==========================");
+
+        return {
+            grupo: null,
+            patente: "Erro",
+            rank: 0,
+            status: "Erro"
+        };
 
     }
 
