@@ -39,15 +39,23 @@ app.use(express.static(path.join(__dirname, "client")));
 // ===============================
 
 const authRoutes = require("./routes/authRoutes");
+const militaresRoutes = require("./routes/militaresRoutes");
 
 app.use("/auth", authRoutes);
+app.use("/api/militares", militaresRoutes);
 
-// Página inicial
+// ===============================
+// PÁGINA INICIAL
+// ===============================
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "index.html"));
 });
 
-// Painel
+// ===============================
+// PAINEL
+// ===============================
+
 app.get("/painel", (req, res) => {
 
     if (!req.session.user) {
@@ -58,7 +66,10 @@ app.get("/painel", (req, res) => {
 
 });
 
+// ===============================
 // API DO USUÁRIO LOGADO
+// ===============================
+
 app.get("/api/me", (req, res) => {
 
     if (!req.session.user) {

@@ -1,5 +1,6 @@
 const axios = require("axios");
 const db = require("../database");
+const robloxService = require("../services/robloxService");
 
 // LOGIN ROBLOX
 exports.login = (req, res) => {
@@ -22,6 +23,10 @@ exports.callback = async (req, res) => {
 
     try {
 
+        // ===============================
+        // TOKEN
+        // ===============================
+
         const token = await axios.post(
             "https://apis.roblox.com/oauth/v1/token",
 
@@ -42,6 +47,10 @@ exports.callback = async (req, res) => {
 
         const accessToken = token.data.access_token;
 
+        // ===============================
+        // USUÁRIO
+        // ===============================
+
         const user = await axios.get(
             "https://apis.roblox.com/oauth/v1/userinfo",
             {
@@ -51,29 +60,62 @@ exports.callback = async (req, res) => {
             }
         );
 
-        // Salva no banco
+        // ===============================
+        // BUSCA PATENTE NO GRUPO
+        // ===============================
+
+        const grupo = await robloxService.getGroupInfo(user.data.sub);
+
+        // ===============================
+        // SALVA / ATUALIZA BANCO
+        // ===============================
+
         db.run(
             `
-            INSERT OR IGNORE INTO militares
-            (roblox_id, nome)
-            VALUES (?,?)
+            INSERT INTO militares
+            (
+                roblox_id,
+                nome,
+                patente,
+                rank,
+                grupo,
+                status
+            )
+            VALUES (?,?,?,?,?,?)
+            ON CONFLICT(roblox_id)
+            DO UPDATE SET
+                nome=excluded.nome,
+                patente=excluded.patente,
+                rank=excluded.rank,
+                grupo=excluded.grupo,
+                status=excluded.status,
+                atualizado_em=CURRENT_TIMESTAMP
             `,
             [
                 user.data.sub,
-                user.data.preferred_username
+                user.data.preferred_username,
+                grupo.patente,
+                grupo.rank,
+                966849028,
+                grupo.status
             ]
         );
 
         // ===============================
-        // SALVA A SESSÃO
+        // SESSÃO
         // ===============================
 
         req.session.user = {
             id: user.data.sub,
-            nome: user.data.preferred_username
+            nome: user.data.preferred_username,
+            patente: grupo.patente,
+            rank: grupo.rank,
+            grupo: grupo.grupo,
+            status: grupo.status
         };
 
-        // Vai para o painel
+        console.log(req.session.user);
+        
         res.redirect("/painel");
 
     } catch (error) {
@@ -84,4 +126,4 @@ exports.callback = async (req, res) => {
 
     }
 
-};  
+};

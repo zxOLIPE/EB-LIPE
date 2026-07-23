@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Painel Militar | EB LIPE</title>
@@ -43,13 +42,13 @@
 <p id="id">Carregando...</p>
 
 <h2>Patente</h2>
-<p id="patente">Recruta</p>
+<p id="patente">Carregando...</p>
 
 <h2>Divisão</h2>
-<p id="divisao">Nenhuma</p>
+<p id="divisao">Carregando...</p>
 
 <h2>Status</h2>
-<p id="status">Ativo</p>
+<p id="status">Carregando...</p>
 
 </div>
 
@@ -59,25 +58,35 @@
 
 <script>
 
-fetch("/api/me")
-.then(async response => {
+async function carregarPerfil() {
 
-    if (!response.ok) {
+    try {
+
+        const response = await fetch("/api/me");
+
+        if (!response.ok) {
+            window.location.href = "/";
+            return;
+        }
+
+        const user = await response.json();
+
+        document.getElementById("nome").textContent = user.nome;
+        document.getElementById("id").textContent = user.id;
+        document.getElementById("patente").textContent = user.patente || "Sem patente";
+        document.getElementById("divisao").textContent = user.divisao || "Nenhuma";
+        document.getElementById("status").textContent = user.status || "Ativo";
+
+    } catch (e) {
+
+        console.log(e);
         window.location.href = "/";
-        return;
+
     }
 
-    const user = await response.json();
+}
 
-    document.getElementById("nome").textContent = user.nome;
-    document.getElementById("id").textContent = user.id;
-
-})
-.catch(() => {
-
-    window.location.href = "/";
-
-});
+carregarPerfil();
 
 </script>
 
